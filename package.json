@@ -1,6 +1,6 @@
 {
   "name": "resnap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple API for capturing and resetting Node's require() cache state",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
   "homepage": "https://github.com/broofa/resnap#readme",
   "devDependencies": {
     "eslint": "5.16.0",
-    "mocha": "6.1.4"
+    "mocha": "^8.3.0"
   }
 }

@@ -11,11 +11,17 @@
  *  // Restore previous cache state
  *  restore();
  */
-module.exports = function resnap_capture() {
-  const cacheKeys = Object.assign({}, require.cache);
 
-  return function resnap_restore() {
-    for (let k in require.cache) delete require.cache[k];
+function clearCache() {
+  for (let k in require.cache) delete require.cache[k];
+}
+
+module.exports = function capture() {
+  const cacheKeys = Object.assign({}, require.cache);
+  clearCache();
+
+  return function restore() {
+    clearCache();
     Object.assign(require.cache, cacheKeys);
   };
 };
